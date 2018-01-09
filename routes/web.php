@@ -11,12 +11,13 @@
 |
 */
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
+Route::group(['prefix' => 'admin'], function (){
     //admin index
     Route::get('/', ['as' => 'admin', 'uses' => 'Admin\AdminController@index']);
 
     //articles
-    Route::resource('articles', 'Article\ArticleController');
+    Route::resource('article', 'Admin\Article\ArticleController');
+    Route::resource('category', 'Admin\Article\CategoryController');
 
     //users
     Route::group(['prefix' => 'users'], function(){

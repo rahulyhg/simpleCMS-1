@@ -179,8 +179,7 @@ return [
 
         //my install providers
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-
+        Anakadote\ImageManager\ImageManagerServiceProvider::class
     ],
 
     /*

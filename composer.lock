@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ddb335c517f0f9a492827f18501bc7c",
+    "content-hash": "56a350e1f352f95870e5b02159282deb",
     "packages": [
+        {
+            "name": "anakadote/laravel-5-image-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anakadote/ImageManager-for-Laravel-5.git",
+                "reference": "afa630aceeecbfdc14354b7d7f6bd38e34f80746"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anakadote/ImageManager-for-Laravel-5/zipball/afa630aceeecbfdc14354b7d7f6bd38e34f80746",
+                "reference": "afa630aceeecbfdc14354b7d7f6bd38e34f80746",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Anakadote\\ImageManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Collins",
+                    "email": "taylor@tcdihq.com"
+                }
+            ],
+            "description": "Image resizing and cropping package for Laravel 5.",
+            "keywords": [
+                "images",
+                "laravel"
+            ],
+            "time": "2017-11-22T14:40:10+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -4196,7 +4234,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "anakadote/laravel-5-image-manager": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

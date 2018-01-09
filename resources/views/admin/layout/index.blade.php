@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-
+@section('title', 'Admin panel - simple CMS')
 @section('content')
     <!-- Counts Section -->
     <section class="dashboard-counts section-padding">
