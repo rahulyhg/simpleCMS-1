@@ -45,11 +45,10 @@ class ArticleController extends Controller
             'subtitle' => 'max:255|',
             'preview' => 'required',
             'body' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $image_name = str_random('7');
-        $request->image->move(public_path('images'));
+        $image_name = str_random('7').'.jpg';
 
         $model = new Article();
         $model->title = $request->get('title');
@@ -59,6 +58,8 @@ class ArticleController extends Controller
         $model->image = $image_name;
         $model->author = Auth::id();
         $model->category_id = $request->get('category_id');
+
+        $request->image->move(public_path('images'), $image_name);
 
         $model->save();
 
@@ -87,7 +88,7 @@ class ArticleController extends Controller
     {
         return view('admin.article.edit', [
             'article' => Article::find($id),
-            'categories' => ArticleCategories::pluck('name'),
+            'categories' => ArticleCategories::pluck('name', 'id'),
         ]);
     }
 
@@ -101,10 +102,11 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required|max:255|unique:articles',
+            'title' => 'required|max:255',
             'subtitle' => 'max:255|',
             'preview' => 'required',
             'body' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $model = Article::find($id);
@@ -112,11 +114,18 @@ class ArticleController extends Controller
         $model->subtitle = $request->get('subtitle');
         $model->preview = $request->get('preview');
         $model->body = $request->get('body');
-        $model->image = $image_name;
         $model->author = Auth::id();
         $model->category_id = $request->get('category_id');
 
+        if($request->get('image')){
+            $image_name = str_random('7').'.jpg';
+            $request->image->move(public_path('images'), $image_name);
+            $model->image = $image_name;
+        }
+
         $model->save();
+
+        return redirect()->route('article.index')->with('success', 'Article updated successfully');
     }
 
     /**

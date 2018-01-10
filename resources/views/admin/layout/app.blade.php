@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ asset("admin_template/css/style.default.css") }}" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="{{ asset("admin_template/css/custom.css") }}">
+        <link rel="stylesheet" href="{{ asset("admin_template/css/tagsinput.css") }}">
         <!-- Favicon-->
         <link rel="shortcut icon" href="favicon.png">
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -53,5 +54,6 @@
 <script src="{{ asset("admin_template/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js") }}"></script>
 <script src="{{ asset("admin_template/js/charts-home.js") }}"></script>
 <script src="{{ asset("admin_template/js/front.js") }}"></script>
+<script src="{{ asset("admin_template/js/tagsinput.js") }}"></script>
 </body>
 </html>

@@ -8,9 +8,9 @@
         </div>
         <div class="main-menu">
             <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li class="active"><a href="{{ route('admin') }}"> <i class="icon-home"></i><span>Home</span></a></li>
-                <li> <a href="{{ route('article.index') }}"><i class="icon-form"></i><span>Forms</span></a></li>
-                <li> <a href="charts.html"><i class="icon-presentation"></i><span>Charts</span></a></li>
+                <li> <a href="{{ route('admin') }}"> <i class="icon-home"></i><span>Home</span></a></li>
+                <li> <a href="{{ route('article.index') }}"><i class="icon-form"></i><span>Articles</span></a></li>
+                <li> <a href="{{ route('project.index') }}"><i class="icon-presentation"></i><span>Projects</span></a></li>
                 <li> <a href="tables.html"> <i class="icon-grid"> </i><span>Tables  </span></a></li>
                 <li> <a href="login.html"> <i class="icon-interface-windows"></i><span>Login page                        </span></a></li>
                 <li> <a href="#"> <i class="icon-mail"></i><span>Demo</span>

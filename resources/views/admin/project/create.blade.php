@@ -19,7 +19,8 @@
                             <h2 class="h5 display">Create new article</h2>
                         </div>
                         <div class="card-body">
-                            {!! Form::open(['url' => route('article.store'), 'class' => 'form-horizontal', 'method' => 'post', 'enctype' => 'multipart/form-data'])!!}
+                            {!! Form::open(['url' => route('project.store'), 'class' => 'form-horizontal', 'method' => 'post', 'enctype' => 'multipart/form-data'])!!}
+
                             <div class="form-group row">
                                 {!! Form::label('title', 'Title*', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
@@ -35,34 +36,50 @@
                             </div>
 
                             <div class="form-group row">
-                                {!! Form::label('preview', 'Preview*', ['class' => 'col-sm-2 form-control-label']) !!}
+                                {!! Form::label('preview', 'Description*', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
-                                    {!! Form::textarea('preview', old('preview'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
+                                    {!! Form::textarea('description', old('description'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                {!! Form::label('body', 'Date', ['class' => 'col-sm-2 form-control-label']) !!}
+                                <div class="col-sm-10">
+                                    {!! Form::text('date', old('date'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
                                     <small class="form-text">Title length max </small>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                {!! Form::label('body', 'Body*', ['class' => 'col-sm-2 form-control-label']) !!}
+                                {!! Form::label('body', 'Link', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
-                                    {!! Form::textarea('body', old('body'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
+                                    {!! Form::text('link', old('link'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
                                     <small class="form-text">Title length max </small>
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                {!! Form::label('category', 'Category', ['class' => 'col-sm-2 form-control-label']) !!}
+                                {!! Form::label('body', 'Link', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
-                                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control form-control-success', 'placeholder' => 'Select category please...']) !!}
-                                    <small class="form-text">Title length max 255 chars.</small>
+                                    {!! Form::text('link', old('link'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter description...']) !!}
+                                    <small class="form-text">Title length max </small>
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                {!! Form::label('image', 'Image*', ['class' => 'col-sm-2 form-control-label']) !!}
+                                {!! Form::label('body', 'Link', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
-                                    {!! Form::file('image', ['class' => 'form-control-file']) !!}
+                                    {!! Form::text('test1', old('link'), ['data-role' => 'tagsinput', 'placeholder' => 'Enter tags...']) !!}
+                                    <small class="form-text">Title length max </small>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <select>
+                                    <option value="300" onclick="anders('')">&#8364; 300,-</option>
+                                    <option value="jQuery" onchange="$('test1').tagsinput('add', {'text': 'Net'});">jQuery</option>
+                                    <option value="Angular">Angular</option>
+                                    <option value="React">React</option>
+                                    <option value="Vue">Vue</option>
+                                </select>
+
+                            </div>
+
                             <div class="line"></div>
 
                             <div class="form-group row">

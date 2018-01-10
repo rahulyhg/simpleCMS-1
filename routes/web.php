@@ -18,6 +18,8 @@ Route::group(['prefix' => 'admin'], function (){
     //articles
     Route::resource('article', 'Admin\Article\ArticleController');
     Route::resource('category', 'Admin\Article\CategoryController');
+    //Projects - for portfolio
+    Route::resource('project', 'Admin\Project\ProjectController');
 
     //users
     Route::group(['prefix' => 'users'], function(){
