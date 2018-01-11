@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed description
  * @property mixed date
  * @property mixed image
- * @property mixed author
+ * @property mixed link
  * @property mixed category_id
  */
 

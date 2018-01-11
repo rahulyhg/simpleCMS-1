@@ -24,12 +24,6 @@ class CreateProjectsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('project_categories');
 
-            $table->integer('images_id')->unsigned();
-            $table->foreign('images_id')->references('id')->on('project_images');
-
-            $table->integer('skills_id');
-            $table->foreign('skills_id')->references('id')->on('project_skills');
-
             $table->timestamps();
         });
     }

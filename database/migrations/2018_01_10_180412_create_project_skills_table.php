@@ -16,6 +16,8 @@ class CreateProjectSkillsTable extends Migration
         Schema::create('project_skills', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
     }

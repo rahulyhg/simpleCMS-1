@@ -16,9 +16,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h2 class="h5 display">Projects</h2>
-                                <a class="btn btn-success btn-sm" href="{{ route('project.create') }}" role="button">Create</a>
-                                <a class="btn btn-success btn-sm" href="{{ route('category.index') }}" role="button">Manager categories</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('project.create') }}" role="button">Create</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('category.index') }}" role="button">Manager categories</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-sm">
@@ -44,16 +43,16 @@
                                         <td>{{ $project->author }}</td>
                                         <td>{{ $project->image }}</td>
                                         <td>
-                                            <button class='btn btn-lg ' style='background-color:transparent;'>
-                                                <i class="fa fa-times"></i>
-                                            </button>
-
-                                            <a class="btn btn-success btn-xs btn-block"
+                                            <a class="btn btn-primary btn-xs"
+                                               href="{{ route('project.show', $project->id) }}"
+                                               role="button">Show
+                                            </a>
+                                            <a class="btn btn-primary btn-xs"
                                                href="{{ route('project.edit', $project->id) }}"
-                                               role="button"><i class="fa fa-times"></i>
+                                               role="button">Edit
                                             </a>
                                             {!! Form::open(['method' => 'DELETE','route' => ['project.destroy', $project->id],'style'=>'display:inline']) !!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-success btn-xs btn-block']) !!}
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-primary btn-xs']) !!}
                                             {!! Form::close() !!}</td>
                                     </tr>
                                     @endforeach
