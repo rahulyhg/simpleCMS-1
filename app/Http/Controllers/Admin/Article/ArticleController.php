@@ -74,7 +74,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        return view('admin.article.view', [
+        return view('admin.article.show', [
             'article' => Article::find($id)]);
     }
 
@@ -138,6 +138,6 @@ class ArticleController extends Controller
     {
         Article::destroy($id);
 
-        return redirect()->route('article,index');
+        return redirect()->route('article.index');
     }
 }

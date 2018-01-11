@@ -20,7 +20,7 @@
         <!-- Custom Scrollbar-->
         <link rel="stylesheet" href="{{ asset("admin_template/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css") }}">
         <!-- theme stylesheet-->
-        <link rel="stylesheet" href="{{ asset("admin_template/css/style.default.css") }}" id="theme-stylesheet">
+        <link rel="stylesheet" href="{{ asset("admin_template/css/style.sea.css") }}" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="{{ asset("admin_template/css/custom.css") }}">
         <link rel="stylesheet" href="{{ asset("admin_template/css/tagsinput.css") }}">

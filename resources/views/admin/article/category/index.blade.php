@@ -23,7 +23,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h2 class="h5 display">Article categories</h2> <a class="btn btn-success btn-sm" href="{{ route('category.create') }}" role="button">Create</a>
+                            <h2 class="h5 display">Article categories</h2> - <a class="btn btn-primary btn-sm" href="{{ route('category.create') }}" role="button">Create</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-sm">

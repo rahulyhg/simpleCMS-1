@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-
+@section('title', 'Create new article')
 @section('content')
     <div class="breadcrumb-holder">
         <div class="container-fluid">
@@ -30,7 +30,9 @@
                                 {!! Form::label('subtitle', 'Subtitle*', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
                                     {!! Form::text('subtitle', old('subtitle'), ['class' => 'form-control form-control-success', 'placeholder' => 'Enter title...']) !!}
-                                    <small class="form-text">Is not required.</small>
+                                    @if ($errors->has('subtitle'))
+                                        <small class="form-text">Is not required.</small>
+                                    @endif
                                 </div>
                             </div>
 
@@ -53,7 +55,6 @@
                                 {!! Form::label('category', 'Category', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
                                     {!! Form::select('category_id', $categories, null, ['class' => 'form-control form-control-success', 'placeholder' => 'Select category please...']) !!}
-                                    <small class="form-text">Title length max 255 chars.</small>
                                 </div>
                             </div>
 

@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-
+@section('title', 'List of articles')
 @section('content')
     <div class="breadcrumb-holder">
         <div class="container-fluid">
@@ -16,9 +16,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h2 class="h5 display">Articles</h2>
-                                <a class="btn btn-success btn-sm" href="{{ route('article.create') }}" role="button">Create</a>
-                                <a class="btn btn-success btn-sm" href="{{ route('category.index') }}" role="button">Manager categories</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('article.create') }}" role="button">Create</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('category.index') }}" role="button">Manager categories</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-sm">
@@ -44,16 +43,16 @@
                                         <td>{{ $article->author }}</td>
                                         <td>{{ $article->image }}</td>
                                         <td>
-                                            <button class='btn btn-lg ' style='background-color:transparent;'>
-                                                <i class="fa fa-times"></i>
-                                            </button>
-
-                                            <a class="btn btn-success btn-xs btn-block"
+                                            <a class="btn btn-primary btn-xs"
+                                               href="{{ route('article.show', $article->id) }}"
+                                               role="button">Show</i>
+                                            </a>
+                                            <a class="btn btn-primary btn-xs"
                                                href="{{ route('article.edit', $article->id) }}"
-                                               role="button"><i class="fa fa-times"></i>
+                                               role="button">Edit</i>
                                             </a>
                                             {!! Form::open(['method' => 'DELETE','route' => ['article.destroy', $article->id],'style'=>'display:inline']) !!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-success btn-xs btn-block']) !!}
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-primary btn-xs']) !!}
                                             {!! Form::close() !!}</td>
                                     </tr>
                                     @endforeach
