@@ -55,5 +55,6 @@
 <script src="{{ asset("admin_template/js/charts-home.js") }}"></script>
 <script src="{{ asset("admin_template/js/front.js") }}"></script>
 <script src="{{ asset("admin_template/js/tagsinput.js") }}"></script>
+@yield('js')
 </body>
 </html>

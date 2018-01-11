@@ -61,7 +61,12 @@
                             <div class="form-group row">
                                 {!! Form::label('body', 'Tags', ['class' => 'col-sm-2 form-control-label']) !!}
                                 <div class="col-sm-10">
-                                    {!! Form::text('test1', old('link'), ['data-role' => 'tagsinput', 'placeholder' => 'Enter tags...']) !!}
+                                    {!! Form::text('test1', old('link'), ['id' => 'tagsInputField', 'data-role' => 'tagsinput', 'placeholder' => 'Enter tags...']) !!}
+                                </div>
+                                <div class="col-sm-10" id="tagsList">
+                                    <a href="#!" class="tag">tag1</a>
+                                    <a href="#!" class="tag">tag2</a>
+                                    <a href="#!" class="tag">tag3</a>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -84,4 +89,20 @@
             </div>
         </div>
     </section>
+@stop
+
+@section('js')
+<script>
+    $(function() {
+        console.log('loaded');
+        var tagsInputField = $('#tagsInputField');
+        $('.tag').on('click', function (e) {
+            var tag = $(e.target);
+            console.log('clicked');
+            tagsInputField.tagsinput('add', tag.text());
+            tag.hide();
+        });
+
+    });
+</script>
 @stop
